@@ -1,0 +1,29 @@
+display_information:
+  name: YouTube Bot
+features:
+  bot_user:
+    display_name: YouTube Bot
+    always_online: false
+  slash_commands:
+    - command: /message-count
+      url: http://jjasghar.ngrok.io/message-count
+      description: Returns your current message count
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - channels:history
+      - chat:write
+      - commands
+      - reactions:read
+      - im:write
+settings:
+  event_subscriptions:
+    request_url: http://jjasghar.ngrok.io/slack/events
+    bot_events:
+      - message.channels
+      - reaction_added
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
+
